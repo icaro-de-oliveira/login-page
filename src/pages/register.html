@@ -7,12 +7,26 @@
     <title>Página de registro</title>
   </head>
   <body>
-    <!-- Coloque aqui o nome do site -->
-    <h1>Nome do site</h1>
     <div class="box">
-      <h2><a href="src/pages/login.html">teste</a></h2>
-      <h2><a href="src/pages/register.html">Registrar</a></h2>
+        <form>
+          <h2 class="form-title">Crie uma conta</h2>
+            <input type="text" id="username" placeholder='Nome de usuário'/>
+            <input type="email" id="email" placeholder='E-mail'/>
+            <input type="password" id="password" placeholder='Senha'/>
+            <input type="password" id="confirm-password" placeholder='Confirme a senha'/>
+            
+            <div class="termos">
+              <input type="checkbox" id="termos"/>
+              <label for="termos">Eu li e aceito os&nbsp;</label>
+              <a class="link-texto" href="#">Termos e Condições</a>
+            </div>
+
+            <button type="submit">Registrar-se</button>
+        </form>
+        <div class="temconta">
+            <p>Já tem uma conta? <a class="link-registro" href="/src/pages/login.html">Faça login</a></p>
+        </div>
     </div>
-    <script src="src/javascript/script.js"></script>
+    <script src="/src/javascript/script.js"></script>
   </body>
 </html>

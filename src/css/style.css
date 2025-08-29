@@ -136,7 +136,7 @@ button:hover {
   opacity: 0.9;
 }
 
-.naotemconta {
+.temconta {
   margin-top: 15px;
   text-align: center;
   font-size: 0.95rem;
@@ -176,4 +176,25 @@ button:hover {
 
 .link-texto:hover {
   color: #2575fc;
+}
+
+.form-title{
+  color: #333 !important;
+  margin: 0 0 20px 0 !important;
+  font-size: 1.8rem !important;
+}
+
+.form-title:after{
+  display: none !important;
+}
+
+.termos{
+  display: flex;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: -5px;
+}
+
+.termos input {
+  margin-right: 4px;
 }
