@@ -187,3 +187,14 @@ button:hover {
 .form-title:after{
   display: none !important;
 }
+
+.termos{
+  display: flex;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: -5px;
+}
+
+.termos input {
+  margin-right: 4px;
+}
