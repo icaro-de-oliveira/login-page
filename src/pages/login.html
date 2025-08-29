@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <title>Página de login</title>
+  </head>
+  <body>
+    <!-- Coloque aqui o nome do site -->
+    <h1>Nome do site</h1>
+    <div class="box">
+        <form>
+            <input type="text" id="username" placeholder='Nome de usuário'/>
+            <input type="password" id="password" placeholder='Senha'/>
+
+            <div class="lembrar">
+                <label>
+                    <input type="checkbox" id="lembrar"/>
+                    Lembrar de mim
+                </label>
+                <a class="link-texto" href="#">Esqueçi a senha</a>
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="naotemconta">
+            <p>Não tem uma conta? <a class="link-registro" href="/src/pages/register.html">Registre-se</a></p>
+        </div>
+    </div>
+    <script src="src/javascript/script.js"></script>
+  </body>
+</html>
