@@ -50,7 +50,7 @@ h1 {
   margin: 10px auto;
 }
 
-.box a {
+.box .link-principal {
   display: block;
   text-decoration: none;
   color: #6a11cb;
@@ -66,7 +66,7 @@ h1 {
   z-index: 1;
 }
 
-.box a:before {
+.box .link-principal:before {
   content: "";
   position: absolute;
   top: 0;
@@ -78,17 +78,17 @@ h1 {
   z-index: -1;
 }
 
-.box a:hover {
+.box .link-principal:hover {
   color: white;
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(106, 17, 203, 0.5);
 }
 
-.box a:hover:before {
+.box .link-principal:hover:before {
   width: 100%;
 }
 
-.box a:active {
+.box .link-principal:active {
   transform: translateY(0);
 }
 
@@ -102,8 +102,78 @@ h1 {
     padding: 30px 20px;
   }
 
-  .box a {
+  .box .link-principal {
     font-size: 1.2rem;
     padding: 15px;
   }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.naotemconta {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.link-registro {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link-registro:hover {
+  color: #2575fc;
+}
+
+.lembrar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: -5px;
+}
+
+.lembrar input {
+  margin-right: 4px;
+}
+
+.link-texto {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link-texto:hover {
+  color: #2575fc;
 }
