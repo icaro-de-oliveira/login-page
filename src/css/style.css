@@ -177,3 +177,13 @@ button:hover {
 .link-texto:hover {
   color: #2575fc;
 }
+
+.form-title{
+  color: #333 !important;
+  margin: 0 0 20px 0 !important;
+  font-size: 1.8rem !important;
+}
+
+.form-title:after{
+  display: none !important;
+}
