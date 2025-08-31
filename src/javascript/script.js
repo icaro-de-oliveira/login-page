@@ -12,16 +12,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function showToast(message, type = "success") {
+  let bgColor;
+
+  switch (type) {
+    case "success":
+      bgColor = "linear-gradient(to right, #95ee34)";
+      break;
+    case "error":
+      bgColor = "#e74c3c";
+      break;
+    case "warning":
+      bgColor = "#f39c12";
+      break;
+    default:
+      bgColor = "#333";
+  }
+  Toastify({
+    text: message,
+    duration: 3000,
+    gravity: "top",
+    position: "center",
+    backgroundColor: bgColor,
+    stopOnFocus: true,
+  }).showToast();
+}
+
 function validarLogin(form) {
   const username = form.querySelector("#username").value.trim();
   const password = form.querySelector("#password").value.trim();
 
   if (username === "" || password === "") {
-    alert("Preencha usuário e senha!");
+    showToast("Preencha usuário e senha!", "error");
     return;
   }
 
-  alert("Login realizado com sucesso!");
+   showToast("Login realizado com sucesso!", "success");
 }
 
 function validarRegistro(form) {
@@ -31,30 +57,35 @@ function validarRegistro(form) {
   const confirmPassword = form.querySelector("#confirm-password").value.trim();
   const termos = form.querySelector("#termos").checked;
 
-  if(username === "" || email === "" || password === "" || confirmPassword === "") {
-    alert("Preencha todos os campos!");
+  if (
+    username === "" ||
+    email === "" ||
+    password === "" ||
+    confirmPassword === ""
+  ) {
+    showToast("Preencha todos os campos!", "error");
     return;
   }
 
-  if(!email.includes("@")) {
-    alert("Digite um e-mail válido!");
+  if (!email.includes("@")) {
+    showToast("Digite um e-mail válido!", "warning");
     return;
   }
 
-  if(password.length < 6) {
-    alert("A senha deve ter pelo menos 6 caracteres!");
+  if (password.length < 6) {
+    showToast("A senha deve ter pelo menos 6 caracteres!", "warning");
     return;
   }
 
   if (password !== confirmPassword) {
-    alert("As senhas não conferem!");
+    showToast("As senhas não conferem!", "error");
     return;
   }
 
   if (!termos) {
-    alert("Você precisa aceitar os Termos e Condições!");
+    showToast("Você precisa aceitar os Termos e Condições!", "error");
     return;
   }
 
-  alert("Registro realizado com sucesso!");
+  showToast("Registro realizado com sucesso!", "success");
 }
