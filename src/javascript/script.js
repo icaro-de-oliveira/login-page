@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     if (document.querySelector("#confirm-password")) {
-      validarRegistro(form);
+      if (document.querySelector("#username") && document.querySelector("#email")) {
+        validarRegistro(form);
+      } else if (document.querySelector("#email") && !document.querySelector("#username")) {
+        validarResetSenha(form);
+      }
     } else {
       validarLogin(form);
     }
@@ -88,4 +92,38 @@ function validarRegistro(form) {
   }
 
   showToast("Registro realizado com sucesso!", "success");
+}
+
+function validarResetSenha(form) {
+  const email = form.querySelector("#email").value.trim();
+  const password = form.querySelector("#password").value.trim();
+  const confirmPassword = form.querySelector("#confirm-password").value.trim();
+  const termos = form.querySelector("#termos").checked;
+
+  if (email === "" || password === "" || confirmPassword === "") {
+    showToast("Preencha todos os campos!", "error");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    showToast("Digite um e-mail válido!", "warning");
+    return;
+  }
+
+  if (password.length < 6) {
+    showToast("A senha deve ter pelo menos 6 caracteres!", "warning");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    showToast("As senhas não conferem!", "error");
+    return;
+  }
+
+  if (!termos) {
+    showToast("Você precisa aceitar os Termos e Condições!", "error");
+    return;
+  }
+
+  showToast("Senha alterada com sucesso!", "success");
 }
